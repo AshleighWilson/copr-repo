@@ -43,7 +43,6 @@ install -m 0644 main.lua %{buildroot}%{optdir}
 install -m 0664 debugger.lua %{buildroot}%{optdir}
 cp -r locale meta script %{buildroot}%{optdir}
 install -m 0755 -d %{buildroot}%{_bindir}
-install -m 0755 %{SOURCE1} %{buildroot}%{_bindir}
 
 %files
 %license LICENSE
