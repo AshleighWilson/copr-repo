@@ -42,14 +42,12 @@ install -m 0644 bin/main.lua %{buildroot}%{optdir}/bin
 install -m 0644 main.lua %{buildroot}%{optdir}
 install -m 0664 debugger.lua %{buildroot}%{optdir}
 cp -r locale meta script %{buildroot}%{optdir}
-install -m 0755 -d %{buildroot}%{_bindir}
 
 %files
 %license LICENSE
 %doc README.md
 
 %{optdir}
-%{_bindir}/lua-language-server
 
 %changelog
 %autochangelog
