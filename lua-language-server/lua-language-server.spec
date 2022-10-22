@@ -8,6 +8,7 @@ Summary: A language server that offers Lua language support - programmed in Lua.
 License: MIT
 URL: https://github.com/sumneko/lua-language-server
 Source0: https://github.com/sumneko/lua-language-server/archive/refs/tags/3.5.6.tar.gz
+Source1: ./lua-language-server
 
 BuildRequires: git
 BuildRequires: gcc-c++
@@ -43,11 +44,19 @@ install -m 0644 main.lua %{buildroot}%{optdir}
 install -m 0664 debugger.lua %{buildroot}%{optdir}
 cp -r locale meta script %{buildroot}%{optdir}
 
+# Include lua-language-server wrapper script
+install -m 0755 -d %{buildroot}%{_bindir}
+install -m 0755 %{SOURCE1} %{buildroot}%{_bindir}
+
 %files
 %license LICENSE
 %doc README.md
 
+# Install lua-language-server files
 %{optdir}
+
+# Install wrapper script to start lua-language-server
+%{_bindir}/lua-language-server
 
 %changelog
 %autochangelog
