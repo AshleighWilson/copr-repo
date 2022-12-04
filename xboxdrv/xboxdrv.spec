@@ -93,9 +93,6 @@ install -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
 %license COPYING
 %{_bindir}/xboxdrv
 %{_mandir}/man1/xboxdrv*
-# Version 0.9
-# %{_bindir}/virtualkeyboard
-# %{_mandir}/man1/virtualkeyboard*
 %{_unitdir}/%{name}.service
 %config(noreplace) %{_sysconfdir}/%{name}.conf
 %{_sysconfdir}/dbus-1/system.d/org.seul.Xboxdrv.conf
